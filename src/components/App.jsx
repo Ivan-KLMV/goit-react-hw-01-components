@@ -6,10 +6,17 @@ import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistics/Statistics';
 import { FriendsList } from './FriendList/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
-
 export const App = () => {
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: '#f5f4fa',
+        flexDirection: 'column',
+        padding: '20px 0px',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
       <Profile
         username={user.username}
         tag={user.tag}

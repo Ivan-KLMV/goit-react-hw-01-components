@@ -1,22 +1,22 @@
-export const FriendsListItem = ({ avatar, name, isOnline, id }) => {
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import css from './FriendsListItem.module.css';
+
+export const FriendsListItem = ({ avatar, name, isOnline }) => {
   return (
-    <li key={id} className="item">
+    <li className={css.item}>
       <span
-        className={`status ${isOnlineCheck(isOnline)}`}
-        style={{
-          display: 'inline-block',
-          width: 10,
-          height: 10,
-          backgroundColor: 'red',
-          borderRadius: '50%',
-        }}
+        className={clsx(css.status, isOnline ? css.isOnline : css.isOffline)}
       ></span>
-      <img className="avatar" src={avatar} alt="User avatar" width="48" />
+      <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
       <p className="name">{name}</p>
     </li>
   );
 };
 
-function isOnlineCheck(triger) {
-  return triger ? 'isOnline' : 'offLine';
-}
+FriendsListItem.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+  // id: PropTypes.number.isRequired,
+};
