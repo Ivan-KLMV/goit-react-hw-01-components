@@ -33,17 +33,21 @@ tbody > tr:nth-child(even) {
   background-color: aliceblue;
 }
 
-th:not(:last-child),
-th:not(:first-child) {
-  border-left: 1px solid whitesmoke;
+th:first-child {
   border-right: 1px solid whitesmoke;
 }
-td:not(:last-child),
-td:not(:first-child) {
-  border-left: 1px solid #adacb156;
-  border-right: 1px solid #adacb156;
+
+th:last-child {
+  border-left: 1px solid whitesmoke;
 }
 
+td:first-child {
+  border-right: 1px solid lightgray;
+}
+
+td:last-child {
+  border-left: 1px solid lightgray;
+}
 tbody > tr > td:first-child {
   text-transform: capitalize;
 }
